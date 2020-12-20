@@ -2,6 +2,7 @@
 require get_template_directory() . "/inc/widgets/schedule-widget.php";
 require get_template_directory() . "/inc/widgets/phone-widget.php";
 require get_template_directory() . "/inc/widgets/social-widget.php";
+require get_template_directory() . "/inc/widgets/same-category-posts-widget.php";
 
 //Подключение сайдбаров
 function universal_theme_widgets_init() {
@@ -45,6 +46,18 @@ register_sidebar(
       'description'   => esc_html__( 'Добавьте текст сюда', 'museum-theme' ),
       'before_widget' => '',
       'after_widget'  => '',
+    )
+  );
+
+  register_sidebar(
+    array(
+      'name'          => esc_html__( 'Сайдбар на странице поста', 'universal' ),
+      'id'            => 'post-sidebar',
+      'description'   => esc_html__( 'Add elements here', 'universal' ),
+      'before_widget' => '<div id="%1$s" class="container widget %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>',
     )
   );
 

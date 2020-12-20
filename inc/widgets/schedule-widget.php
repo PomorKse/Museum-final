@@ -15,7 +15,7 @@ class Schedule_Widget extends WP_Widget {
 
 		// скрипты/стили виджета, только если он активен
 		if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
-			add_action('wp_enqueue_scripts', array( $this, 'add_schedule_widget_scripts' ));
+			//add_action('wp_enqueue_scripts', array( $this, 'add_schedule_widget_scripts' ));
 			add_action('wp_head', array( $this, 'add_schedule_widget_style' ) );
 		}
 	}

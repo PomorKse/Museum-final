@@ -413,6 +413,11 @@ header .row .header-col nav{
 .programs .btn-wrapp{
 	margin-top: 50px;
 }
+
+.programs img{
+	max-width: 50%;
+}
+
 .swiper-slide{
 	opacity: 0.3;
 }
@@ -475,6 +480,11 @@ header .row .header-col nav{
 	line-height: 130%;
 	color: #323232;
 }
+
+.news .news-wrapp_block a, .news .news-wrapp_block a, .poster .poster-wrapp_block a {
+	text-decoration: none;
+}
+
 .news .news-wrapp_block h4, .poster .poster-wrapp_block h4{
 	font-size: 18px;
 }
