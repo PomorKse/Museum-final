@@ -50,18 +50,13 @@ class Same_Category_Posts_Widget extends WP_Widget {
           <div class="col-xs-12 col-sm-6	col-md-4 col-lg-4">
             <!--<a href="<?php echo get_the_permalink(); ?>">-->
               <div class="news-wrapp_block">
-                <?php 
-                  $media = get_attached_media( 'image' );
-                  $media = array_shift( $media );
-                                  
-                  // ссылка на картинку
-                  $image_url = $media->guid;
-                                  
-                  // выведем картинку в браузере
-                  echo '<img src="'. $image_url .'" />';
-                ?>
-                <span><?php the_field('date'); ?></span>
-                <h4><?php the_title(); ?></h4>
+                <a href="<?php echo get_the_permalink(); ?>">
+                  <?php 
+                    get_template_part( 'template-parts/post-image' );
+                  ?>
+                  <span><?php the_field('date'); ?></span>
+                  <h4><?php the_title(); ?></h4>
+                </a>
               </div><!-- end .news-wrapp_block -->
             <!--</a> -->
           </div><!--end. col-xs-12 col-sm-6	col-md-4 col-lg-4-->

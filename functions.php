@@ -121,6 +121,7 @@ function enqueue_museum_style() {
 	wp_enqueue_style( 'Open-Sans', '//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 	wp_enqueue_style( 'Roboto', '//fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/assets/css/swiper.min.css', 'style', time());
+	wp_enqueue_style( 'fancybox', get_template_directory_uri() . '/assets/css/fancybox.min.css', 'style', time());
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', 'style', time());
 	wp_enqueue_style( 'reset', get_template_directory_uri() . '/assets/css/reset.css', 'style', time());
 	wp_enqueue_style( 'museum-theme-style', get_template_directory_uri() . '/assets/css/style.css', 'style', time());
@@ -128,7 +129,8 @@ function enqueue_museum_style() {
 	wp_register_script( 'jquery-core', '//code.jquery.com/jquery-3.5.1.min.js');
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/assets/js/swiper.min.js', null, time(), true );	
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/script.js', 'swiper', time(), true );		
+	wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/assets/js/fancybox.min.js', null, time(), true );	
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/script.js', 'swiper', 'fancybox', time(), true );		
 }  
 add_action( 'wp_enqueue_scripts', 'enqueue_museum_style' );
 

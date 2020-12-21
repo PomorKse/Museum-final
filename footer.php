@@ -75,9 +75,6 @@
 									
 										dynamic_sidebar( 'sidebar-footer-social' );
 									?>
-									<!--<a href="#"><img src="img/icons/vk-i.svg"></a>
-									<a href="#"><img src="img/icons/facebook-i.svg"></a>
-									<a href="#"><img src="img/icons/instagram-i.svg"></a>-->
 								</div>
 							</div>
 						</div><!--end .footer-block-->
@@ -94,10 +91,6 @@
 			</div>
 		</div>
 	</footer>
-<!--
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>-->
   <?php wp_footer(); ?>
   </body>
 </html>

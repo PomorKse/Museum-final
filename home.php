@@ -30,14 +30,7 @@ get_header(); ?>
 					
 					<div class="swiper-slide" data-num="1">
 						<?php 
-								$media = get_attached_media( 'image' );
-								$media = array_shift( $media );
-								
-								// ссылка на картинку
-								$image_url = $media->guid;
-								
-								// выведем картинку в браузере
-								echo '<img src="'. $image_url .'" />';
+							get_template_part( 'template-parts/post-image' );
             ?>
 						<h1><?php the_title(); ?></h1>
 						<a href="<?php echo get_the_permalink(); ?>" class="slider-btn">Купить билет</a>
@@ -111,20 +104,9 @@ get_header(); ?>
 									?>
 									<div class="s">
 										<div class="poster-wrapp_block">
-											<a href="<?php echo get_the_permalink(); ?>">
-												<?php 
-													$media = get_attached_media( 'image' );
-													$media = array_shift( $media );
-																	
-													// ссылка на картинку
-													$image_url = $media->guid;
-																	
-													// выведем картинку в браузере
-													echo '<img src="'. $image_url .'" />';
-												?>
-												<span><?php the_field('date'); ?></span>
-												<h4><?php the_title(); ?></h4>
-											</a>
+											<?php 
+												get_template_part( 'template-parts/card' );	
+											?>
 										</div>
 									</div>
 									<?php
@@ -135,20 +117,9 @@ get_header(); ?>
 									?>
 									<div class="e">
 										<div class="poster-wrapp_block">
-											<a href="<?php echo get_the_permalink(); ?>">
-												<?php 
-													$media = get_attached_media( 'image' );
-													$media = array_shift( $media );
-																	
-													// ссылка на картинку
-													$image_url = $media->guid;
-																	
-													// выведем картинку в браузере
-													echo '<img src="'. $image_url .'" />';
-												?>
-												<span><?php the_field('date'); ?></span>
-												<h4><?php the_title(); ?></h4>
-											</a>
+											<?php 
+												get_template_part( 'template-parts/card' );
+											?>
 										</div>
 									</div>
 									<?php
@@ -159,20 +130,9 @@ get_header(); ?>
 									?>
 									<div class="er">
 										<div class="poster-wrapp_block">
-											<a href="<?php echo get_the_permalink(); ?>">
-												<?php 
-													$media = get_attached_media( 'image' );
-													$media = array_shift( $media );
-																	
-													// ссылка на картинку
-													$image_url = $media->guid;
-																	
-													// выведем картинку в браузере
-													echo '<img src="'. $image_url .'" />';
-												?>
-												<span><?php the_field('date'); ?></span>
-												<h4><?php the_title(); ?></h4>
-											</a>
+											<?php 
+												get_template_part( 'template-parts/card' );
+											?>
 										</div>
 									</div>
 									<?php
@@ -183,20 +143,9 @@ get_header(); ?>
 									?>
 									<div class="t">
 										<div class="poster-wrapp_block">
-											<a href="<?php echo get_the_permalink(); ?>">
-												<?php 
-													$media = get_attached_media( 'image' );
-													$media = array_shift( $media );
-																	
-													// ссылка на картинку
-													$image_url = $media->guid;
-																	
-													// выведем картинку в браузере
-													echo '<img src="'. $image_url .'" />';
-												?>
-												<span><?php the_field('date'); ?></span>
-												<h4><?php the_title(); ?></h4>
-											</a>
+											<?php 
+												get_template_part( 'template-parts/card' );
+											?>
 										</div>
 									</div>
 									<?php
@@ -207,20 +156,9 @@ get_header(); ?>
 									?>
 									<div class="d">
 										<div class="poster-wrapp_block">
-											<a href="<?php echo get_the_permalink(); ?>">
-												<?php 
-													$media = get_attached_media( 'image' );
-													$media = array_shift( $media );
-																	
-													// ссылка на картинку
-													$image_url = $media->guid;
-																	
-													// выведем картинку в браузере
-													echo '<img src="'. $image_url .'" />';
-												?>
-												<span><?php the_field('date'); ?></span>
-												<h4><?php the_title(); ?></h4>
-											</a>
+											<?php 
+												get_template_part( 'template-parts/card' );
+											?>
 										</div>
 									</div>
 									<?php
@@ -231,20 +169,9 @@ get_header(); ?>
 									?>
 									<div class="g">
 										<div class="poster-wrapp_block">
-											<a href="<?php echo get_the_permalink(); ?>">
-												<?php 
-													$media = get_attached_media( 'image' );
-													$media = array_shift( $media );
-																	
-													// ссылка на картинку
-													$image_url = $media->guid;
-																	
-													// выведем картинку в браузере
-													echo '<img src="'. $image_url .'" />';
-												?>
-												<span><?php the_field('date'); ?></span>
-												<h4><?php the_title(); ?></h4>
-											</a>
+											<?php 
+												get_template_part( 'template-parts/card' );
+											?>
 										</div>
 									</div>
 											<?php
@@ -269,7 +196,7 @@ get_header(); ?>
 			</div><!-- end .news-wrapp -->
 		</div>
 		<div class="btn-wrapp">
-			<a href="#" class="slider-btn btn-white">Вся афиша</a>
+			<a href="<?php echo get_post_type_archive_link('event'); ?>" class="slider-btn btn-white">Вся афиша</a>
 		</div>
 
 		</div>
@@ -303,14 +230,7 @@ get_header(); ?>
 
 									<div class="swiper-slide" data-num="1">
 										<?php 
-											$media = get_attached_media( 'image' );
-											$media = array_shift( $media );
-																	
-											// ссылка на картинку
-											$image_url = $media->guid;
-																	
-											// выведем картинку в браузере
-											echo '<img src="'. $image_url .'" />';
+											get_template_part( 'template-parts/post-image' );
 										?>
 										<div class="programs-slide-text">
 											<h3><?php the_title(); ?></h3>
@@ -344,7 +264,7 @@ get_header(); ?>
 				</div>
 			</div>
 			<div class="btn-wrapp">
-				<a href="#" class="slider-btn btn-white">Все программы</a>
+				<a href="<?php echo get_post_type_archive_link('program'); ?>" class="slider-btn btn-white">Все программы</a>
 			</div>
 
 		</div>
@@ -390,14 +310,7 @@ get_header(); ?>
 										<div class="news-wrapp_block">
 											<a href="<?php echo get_the_permalink(); ?>">	
 												<?php 
-													$media = get_attached_media( 'image' );
-													$media = array_shift( $media );
-													
-													// ссылка на картинку
-													$image_url = $media->guid;
-													
-													// выведем картинку в браузере
-													echo '<img src="'. $image_url .'" />';
+													get_template_part( 'template-parts/post-image' );
 												?>
 												<span><?php the_field('date'); ?></span>
 												<h3><?php the_title(); ?></h3>
@@ -409,51 +322,14 @@ get_header(); ?>
 										break;
 
 										//выводим второй пост
-										case '2':
+										default:
 									?>
 								<div class="col-xs-12 col-sm-12	col-md-4 col-lg-4 news-last-block">
 									<div class="news-wrapp_block">
-										<a href="<?php echo get_the_permalink(); ?>">
-											<?php 
-												$media = get_attached_media( 'image' );
-												$media = array_shift( $media );
-																
-												// ссылка на картинку
-												$image_url = $media->guid;
-																
-												// выведем картинку в браузере
-												echo '<img src="'. $image_url .'" />';
-											?>
-											<span><?php the_field('date'); ?></span>
-											<h4><?php the_title(); ?></h4>
-										</a>
-									</div>
-									<?php
-										break;
-
-									//выводим третий пост
-									case '3':
+										<?php 
+											get_template_part( 'template-parts/card' );
 										?>
-
-									<div class="news-wrapp_block">
-										<a href="<?php echo get_the_permalink(); ?>">
-											<?php 
-												$media = get_attached_media( 'image' );
-												$media = array_shift( $media );
-																
-												// ссылка на картинку
-												$image_url = $media->guid;
-																
-												// выведем картинку в браузере
-												echo '<img src="'. $image_url .'" />';
-											?>
-											<span><?php the_field('date'); ?></span>
-											<h4><?php the_title(); ?></h4>
-										</a>
 									</div>
-									<?php
-										break;
-									?>
 								</div>
 								<?php 
 							}
@@ -468,7 +344,7 @@ get_header(); ?>
 				</div>
 			</div>
 			<div class="btn-wrapp">
-				<a href="#" class="slider-btn btn-white">Все СОБЫТИЯ</a>
+				<a href="<?php echo get_post_type_archive_link('event'); ?>" class="slider-btn btn-white">Все СОБЫТИЯ</a>
 			</div>
 
 		</div>

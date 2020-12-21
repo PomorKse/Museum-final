@@ -3,12 +3,23 @@
 <section class="bread-crumbs">
 		<div class="container">
 			<div class="bread-crumbs_wrapp">
-				<div class="bread-crumbs-item">Главная</div>
-				<div class="bread-crumbs-item">События</div>
-				<div class="bread-crumbs-item">Четвёртая по счёту победа "Мастерской-музея реалистической живописи
-					Александра Николаева" </div>
+				<div class="bread-crumbs-item"><a href="<?php echo home_url(); ?>">Главная</a></div>
+        <div class="bread-crumbs-item">
+          <a href="<?php echo get_post_type_archive_link($category_name); ?>">
+						<?php
+							//получаем IDтекущего поста
+							$name = get_the_ID();
+							//получаем название типа записи в виде строки
+              $category_name = get_post_type( $name );//event/program
+              //получаем объект произвольного типа записи
+              $obj = get_post_type_object( $category_name );
+              //и выводим его название
+              echo $obj->labels->name;
+            ?>
+          </a>
+        </div>
+				<div class="bread-crumbs-item"><?php echo esc_html( get_the_title() ); ?></div>
 			</div>
-			
 		</div>
 	</section>
 
