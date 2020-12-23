@@ -49,7 +49,7 @@ function check_file_upload_size( $file ){
 	}
 	// для всех остальных картинок
 	elseif( false !== strpos( $file['type'], 'image') ){
-		$size_limit = 500;
+		$size_limit = 700;
 	}
 
 	if( isset($size_limit) ){

@@ -228,6 +228,11 @@ header .row .header-col nav{
 .hero {
 	padding-top: 30px;
 }
+
+.swiper-slide{
+	overflow: hidden;
+}
+
 .hero .swiper-wrapper .swiper-slide h1, .hero .swiper-wrapper .swiper-slide .slider-btn{
 	margin-left: 30px;
 }
@@ -759,15 +764,21 @@ footer .footer-bottom span a{
 .article .article-socials-wrapp,.article .article-socials-wrapp .article-socials, .article .article-socials-wrapp .article-socials-nav{
 	display: flex;
 	justify-content: space-between;
-	align-items: baseline;
+	align-items: center;
 }
-.article .article-socials-wrapp .article-socials .share{
+.article .article-socials-wrapp .article-socials .share, .addtoany_list .addtoany_share{
 	margin-right: 30px;
 	font-weight: 500;
 	font-size: 15px;
 	line-height: 100%;
 	color: #666666;
+	text-decoration: none;
 }
+
+.addtoany_list a {
+	padding: 0;
+}
+
 .article .article-socials-wrapp .article-socials a:first-child:hover{
 	text-decoration-line: underline;
 	color: #C02223;
@@ -777,9 +788,6 @@ footer .footer-bottom span a{
 }
 .article .article-socials-wrapp .article-socials a:nth-child(2) img{
 	margin-bottom: -3px;
-}
-.article .article-socials-wrapp .article-socials a{
-	margin-right: 15px;
 }
 .article .article-socials-nav .article-arrow-left,
 .article .article-socials-nav .article-arrow-right{
@@ -1116,6 +1124,7 @@ padding-bottom: 20px;
 .article .article-socials-nav .article-arrow-left{
 	margin-left: 0;
 }
+
 nav ul.nav-main{
 	display: none;
 }

@@ -7,10 +7,10 @@
         <div class="bread-crumbs-item">
           <a href="<?php echo get_post_type_archive_link($category_name); ?>">
 						<?php
-							//получаем IDтекущего поста
+							//получаем ID текущего поста
 							$name = get_the_ID();
 							//получаем название типа записи в виде строки
-              $category_name = get_post_type( $name );//event/program
+              $category_name = get_post_type( $name );
               //получаем объект произвольного типа записи
               $obj = get_post_type_object( $category_name );
               //и выводим его название
@@ -25,73 +25,47 @@
 
 	<section class="article">
 		<div class="container">
-			<h1>Четвёртая по счёту победа "Мастерской-музея реалистической живописи Александра Николаева"</h1>
-			<span>24 июня 2020</span>
+			<h1><?php the_title(); ?></h1>
+			<span><?php the_field('date'); ?></span>
 			<div class="article-wrapp">
 
 				<div class="article-img-wrapp">
+
 					<div class="swiper-container gallery-top">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<img src="img/article/1.png">
-							</div>
-							<div class="swiper-slide">
-								<img src="img/article/2.png">
-							</div>
-							<div class="swiper-slide">
-								<img src="img/article/3.png">
-							</div>
-							<div class="swiper-slide">
-								<img src="img/article/4.png">
-							</div>
-							<div class="swiper-slide">
-								<img src="img/article/5.png">
-							</div>
+							<?php
+								$media = get_attached_media( 'image' );
 
-						</div>
+								//Перебираем массив с фото, находим guid, получаем ссылку 
+								foreach ($media as $image) : ?>
+									<div class="swiper-slide">
+										<img src="<?php echo $image->guid; ?>" alt="event-slider">
+									</div>
+								<?php 
+								endforeach;
+							?>
+					</div><!-- end .swiper-container .gallery-top -->
 
-					</div>
 					<div class="swiper-container gallery-thumbs">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<img src="img/article/1.png">
-							</div>
-							<div class="swiper-slide">
-								<img src="img/article/2.png">
-							</div>
-							<div class="swiper-slide">
-								<img src="img/article/3.png">
-							</div>
-							<div class="swiper-slide">
-								<img src="img/article/4.png">
-							</div>
-							<div class="swiper-slide">
-								<img src="img/article/5.png">
-							</div>
+								<?php
+									$media = get_attached_media( 'image' );
 
+									//Перебираем массив с фото, находим guid, получаем ссылку 
+									foreach ($media as $image) {
+										echo '<div class="swiper-slide"><img src="'. $image->guid . '" alt="' . '"></div>';
+									}
+								?>
 						</div>
-					</div>
+					</div><!-- end .swiper-container .gallery-thumbs -->
+
 					<div class="swiper-button_arrows">
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
 						</div>
 				</div>
 
-				<p>Четвёртая по счёту победа "Мастерской-музея реалистической живописи Александра Николаева" в конкурсе
-					Фонда перезидентских грантов означает, что в мастерской-музее стартует новая образовательная
-					программа для творческой молодёжи.</p>
-				<p>Проект охватывает 5 регионов: Нижегородскую, Тверскую, Псковскую, Ленинградскую и Новгородскую
-					область и ориентирован на учащихся 13-17 лет из Детских школ искусств, распололоженных в малых
-					городах и сельской местности.</p>
-				<p>Общее количество участников проекта 160 человек, 130 учащихся и 30 преподавателей.</p>
-				<p>Проект "Межрегиональная молодежная школа-мастерская художественных специальностей" будет проводиться
-					в формате образовательных сессий в мастерской-музее, за год состоится 5 совместных сессий для
-					учащихся и педгогов и 2 методические сессии для прподавателей ДШИ.</p>
-				<p>Задача проекта создать и апробировать уникальную практику системной поэтапной дифференцированной по
-					возрастным группам учащихся профориентации в ДШИ и предполагает разработку и реализацию особой
-					программы проекта, основой которой станет практическое освоение различных творческих дисциплин и
-					компетенций под руководством профессиональных художников и специалистов, работающих в различных
-					сферах искусства и культуры.создать систему профориентационной работы для ДШИ.</p>
+				<p><?php the_content(); ?></p>
 
 				<p class="article-link">Об этом смотрите в репортаже....
 					<a
@@ -100,15 +74,11 @@
 
 				<div class="article-socials-wrapp">
 					<div class="article-socials">
-						<div class="share">Поделиться</div>
-						<a href="#"><img src="img/article/socials/vk.svg"></a>
-						<a href="#"><img src="img/article/socials/facebook.svg"></a>
-						<a href="#"><img src="img/article/socials/instagram.svg"></a>
-						<a href="#"><img src="img/article/socials/telegram.svg"></a>
-						<a href="#"><img src="img/article/socials/whatsapp.svg"></a>
+						<div class="share">Поделиться</div> 
+						<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
 					</div>
 					<div class="article-socials-nav">
-						<a class="article-arrow-left no-active" href="#">
+						<a class="article-arrow-left no-active" href="<?php ?>">
 							<svg width="41" height="16" viewBox="0 0 41 16" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
 								<path
@@ -129,7 +99,7 @@
 						</a>
 					</div>
 				</div>
-			</div>
+			</div><!-- end .article-wrapp -->
 		</div>
 		</div>
 	</section>

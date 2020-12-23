@@ -16,7 +16,7 @@ get_header(); ?>
           <a href="<?php echo get_post_type_archive_link($category_name); ?>">
             <?php
               //получаем название типа записи в виде строки
-              $category_name = get_post_type( $post_id );//event/program
+              $category_name = get_post_type();//event/program
               //получаем объект произвольного типа записи
               $obj = get_post_type_object( $category_name );
               //и выводим его название

@@ -1,6 +1,7 @@
 <?php
 
 require get_template_directory() . "/inc/theme-tools/svg-loader.php";
+require get_template_directory() . "/inc/theme-tools/img-filter.php";
 require get_template_directory() . "/inc/theme-tools/css-filter.php";
 require get_template_directory() . "/inc/widgets/sidebars.php";
 
