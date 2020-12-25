@@ -67,10 +67,22 @@
 
 				<p><?php the_content(); ?></p>
 
-				<p class="article-link">Об этом смотрите в репортаже....
-					<a
-						href="https://novgorod-tv.ru/novosti/51404-novgorodskie-podrostki-smogut-poseshchat-master-klassy-i-lektsii-luchshikh-spetsialistov-v-sfere-iskusstva.html">https://novgorod-tv.ru/novosti/51404-novgorodskie-podrostki-smogut-poseshchat-master-klassy-i-lektsii-luchshikh-spetsialistov-v-sfere-iskusstva.html</a>
-				</p>
+				
+					<?php 
+					// проверяем установлено ли кастомное поля-ссылка
+					$media_link = get_post_meta(get_the_ID(), 'media_link', true); 
+
+					if ($media_link) :?>
+						<p class="article-link">
+							Об этом смотрите в репортаже....
+							<a href="tel:<?php the_field('media_link'); ?>"><?php the_field('media_link'); ?></a>
+						</p>
+					<?php endif;
+					?>
+
+
+					<!--<a
+						href="https://novgorod-tv.ru/novosti/51404-novgorodskie-podrostki-smogut-poseshchat-master-klassy-i-lektsii-luchshikh-spetsialistov-v-sfere-iskusstva.html">https://novgorod-tv.ru/novosti/51404-novgorodskie-podrostki-smogut-poseshchat-master-klassy-i-lektsii-luchshikh-spetsialistov-v-sfere-iskusstva.html</a>-->
 
 				<div class="article-socials-wrapp">
 					<div class="article-socials">

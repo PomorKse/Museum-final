@@ -37,21 +37,23 @@
 									?>
 					</div>
 					<div class="col-xs-2 col-sm-12	col-md-12 col-lg-8 header-col">
+						<nav class="hamburger hamburger3">
+							<?php 
+								wp_nav_menu( [
+									'theme_location'  => 'header_menu',
+									'container'       => false, 
+									'menu_class'      => 'nav-main', 
+									'echo'            => true
+								] );
+							?>
 
-						<?php 
-							wp_nav_menu( [
-								'theme_location'  => 'header_menu',
-								'container'       => 'nav', 
-								'container_class' => 'hamburger hamburger3', 
-								'menu_class'      => 'nav-main', 
-								'echo'            => true
-							] );
-						?>
 
-						<span class="bar bar1"></span>
-						<span class="bar bar2"></span>
-						<span class="bar bar3"></span>
-						<span class="bar bar4"></span>
+							<span class="bar bar1"></span>
+							<span class="bar bar2"></span>
+							<span class="bar bar3"></span>
+							<span class="bar bar4"></span>
+
+						</nav>
 
 						<!--<nav class="hamburger hamburger3">
 							<ul class="nav-main">
